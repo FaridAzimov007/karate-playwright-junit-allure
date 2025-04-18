@@ -1,0 +1,117 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.11.2"
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.aspectj:aspectjweaver:1.9.21'
+    implementation 'com.intuit.karate:karate-junit5:1.4.1'
+    implementation 'com.microsoft.playwright:playwright:1.50.0'
+    implementation 'io.rest-assured:rest-assured:5.3.0'
+    implementation 'io.rest-assured:json-path:5.3.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+    implementation 'io.qameta.allure:allure-karate:2.29.1'
+    implementation 'io.qameta.allure:allure-assertj:2.13.9'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+}
+
+test {
+    useJUnitPlatform()
+    outputs.upToDateWhen { false }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+    doFirst {
+        delete fileTree(
+                dir: layout.buildDirectory.get().asFile,
+                include: ["allure-results/**/*"]
+        )
+    }
+
+}
+
+tasks.register("uiSmoke", Test) {
+    group = "verification"
+    description = "Run Smoke UI tests only"
+
+    useJUnitPlatform {
+        includeTags "SmokeUI"
+    }
+
+    include '**/web/**/*.class' // запускаем только UI тесты
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    outputs.upToDateWhen { false } // не кэшировать
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+}
+
+
+tasks.register("karateSmoke", Test) {
+    group = "verification"
+    description = "Run Smoke Karate tests only"
+
+    useJUnitPlatform()
+
+//    include '**/api/runners/KarateTestRunner*.class'
+    filter {
+        includeTestsMatching "api.runners.KarateTestRunner"
+    }
+    systemProperty "karate.options", "--tags @Smoke"
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    outputs.upToDateWhen { false }
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+}
+
+tasks.register("smoke") {
+    group = "verification"
+    description = "Run all Smoke tests (Karate + UI)"
+    dependsOn("uiSmoke", "karateSmoke")
+}
+
+tasks.register("regress", Test) {
+    group = "verification"
+    description = "Run all Regress tests (Karate + UI)"
+    useJUnitPlatform()
+    systemProperty "karate.options", "Regress"
+    systemProperty "junit.jupiter.tags", "RegressUI"
+}
+
+tasks.register("sanity", Test) {
+    group = "verification"
+    description = "Run all Sanity tests (Karate + UI)"
+    useJUnitPlatform()
+    systemProperty "karate.options", "Sanity"
+    systemProperty "junit.jupiter.tags", "SanityUI"
+}
+
+sourceSets {
+    test {
+        java.srcDirs = ['src/test/java']
+        resources.srcDirs = ['src/test/resources']
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}

@@ -1,0 +1,69 @@
+# Java class files
+*.class
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.DS_Store
+
+# Build directories
+/build/
+/out/
+/target/
+
+# Gradle
+.gradle/
+/**/build/
+!gradle-wrapper.jar
+.gradle-cache/
+gradle-app.setting
+
+# IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VSCode
+.vscode/
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Allure reports
+allure-results/
+allure-report/
+
+# Environment files
+.env
+*.env
+
+# Karate reports and temp files
+karate-output/
+karate.log
+karate-reports/
+
+# Playwright
+/test-results/
+playwright-report/
+.playwright/
+
+# Node-related (in case you use npm for playwright)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Misc
+*.bak
+*.orig
+
+# JetBrains Rider
+*.sln.iml
+
+# Backup files
+*.old
+*.save

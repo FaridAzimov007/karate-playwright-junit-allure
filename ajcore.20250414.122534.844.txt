@@ -1,0 +1,153 @@
+---- AspectJ Properties ---
+AspectJ Compiler 1.9.9.1 built on Thursday Mar 31, 2022 at 05:00:07 PDT
+---- Dump Properties ---
+Dump file: ajcore.20250414.122534.844.txt
+Dump reason: org.aspectj.weaver.BCException
+Dump on exception: true
+Dump at exit condition: abort
+---- Exception Information ---
+org.aspectj.weaver.BCException: Unable to find ASM classes (org.objectweb.asm.ClassReader, org.objectweb.asm.ClassVisitor) for stackmap generation. Stackmap generation for woven code is required to avoid verify errors on a Java 1.7 or higher runtime.
+when weaving type web.BasePage
+when weaving classes 
+when weaving 
+
+	at org.aspectj.weaver.bcel.LazyClassGen.getJavaClassBytesIncludingReweavable(LazyClassGen.java:756)
+	at org.aspectj.weaver.bcel.BcelWeaver.getClassFilesFor(BcelWeaver.java:1459)
+	at org.aspectj.weaver.bcel.BcelWeaver.weaveAndNotify(BcelWeaver.java:1421)
+	at org.aspectj.weaver.bcel.BcelWeaver.weave(BcelWeaver.java:1192)
+	at org.aspectj.weaver.tools.WeavingAdaptor.getWovenBytes(WeavingAdaptor.java:549)
+	at org.aspectj.weaver.tools.WeavingAdaptor.weaveClass(WeavingAdaptor.java:385)
+	at org.aspectj.weaver.loadtime.Aj.preProcess(Aj.java:115)
+	at org.aspectj.weaver.loadtime.ClassPreProcessorAgentAdapter.transform(ClassPreProcessorAgentAdapter.java:51)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:244)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:610)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at web.productPageTests.ProductPageTest.testLoginAndCartFlow(ProductPageTest.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestMethod(InvocationInterceptor.java:118)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java---- System Properties ---
+java.specification.version=21
+sun.jnu.encoding=UTF-8
+org.gradle.test.worker=2
+java.class.path=/usr/local/gradle/caches/8.5/workerMain/gradle-worker.jar:/Users/faridazimov/Desktop/PortnovSchool/karateProject/build/classes/java/test:/Users/faridazimov/Desktop/PortnovSchool/karateProject/build/resources/test:/Users/faridazimov/Desktop/PortnovSchool/karateProject/build/classes/java/main:/Users/faridazimov/Desktop/PortnovSchool/karateProject/build/resources/main:/usr/local/gradle/caches/modules-2/files-2.1/com.intuit.karate/karate-junit5/1.4.1/27292c36c95978a7226494102ec4494469f36ff5/karate-junit5-1.4.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.microsoft.playwright/playwright/1.50.0/750253245e3b20379a97dac63d5a698adcfadd79/playwright-1.50.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.rest-assured/rest-assured/5.3.0/8d59681728713ee2f029d1d30781ec4f181b1687/rest-assured-5.3.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.rest-assured/json-path/5.3.0/f389c8bad3550779013822687ac3138b9594efc/json-path-5.3.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/2.0.9/6367825de95d8885aae056afa793f25a76a84b7d/slf4j-simple-2.0.9.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-karate/2.29.1/35e7086220d814d7375fb23bf4b7d4d11e022023/allure-karate-2.29.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-assertj/2.13.9/165f990daf8631c1ebd85c3fb0d133156f7dc8a6/allure-assertj-2.13.9.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-junit5/2.19.0/81e6b72649a4a9642d20c1311e23bcd687f81329/allure-junit5-2.19.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-junit-platform/2.19.0/bf7e14e12b4750532b484c1dea029ab5afd7bc2e/allure-junit-platform-2.19.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.9.3/485650bfe2a2f39b606a6ca013285afda2eaee79/junit-platform-launcher-1.9.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.9.3/8616734a190f8d307376aeb7353dba0a2c037a09/junit-platform-engine-1.9.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.9.3/36b2e26a90c41603be7f0094bee80e3f8a2cd4d4/junit-platform-commons-1.9.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.9.3/355322b03bf39306a183162cd06626c206f0286b/junit-jupiter-engine-5.9.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.9.3/815818ad6ffcc8d320d8fbdf3d748c753cf83201/junit-jupiter-api-5.9.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.intuit.karate/karate-core/1.4.1/ab053b51a57d7562dfe6a1964ab7080e4aa20e08/karate-core-1.4.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.12.1/4e773a317740b83b43cfc3d652962856041697cb/gson-2.12.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e/opentest4j-1.3.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.microsoft.playwright/driver-bundle/1.50.0/7224db8909865212a2861579c7cbe0c79f2cdf44/driver-bundle-1.50.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.microsoft.playwright/driver/1.50.0/fb6aefc3279051ad87f438aef3c6b9596f2ecc00/driver-1.50.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.rest-assured/xml-path/5.3.0/8a9672fbd0bb2528d1a0d9e00bf4e41de6b20151/xml-path-5.3.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.groovy/groovy-json/4.0.6/14fa2997f9164cf5171cc0d8ef82f59ec82039fa/groovy-json-4.0.6.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.groovy/groovy-xml/4.0.6/a05e4f0e902b43764ff1161797f5079d3608143/groovy-xml-4.0.6.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.rest-assured/rest-assured-common/5.3.0/5de8e4da01e54b57f19373889429b99b1f741416/rest-assured-common-5.3.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.groovy/groovy/4.0.6/559fc0d1ea7f82f0974712dfe33a16fd84fc71de/groovy-4.0.6.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.13/efc110bad4a0d45cda7858e6beee1d8a8313da5a/httpmime-4.5.13.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.14/1194890e6f56ec29177673f2f12d0b8e627dec98/httpclient-4.5.14.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.1/9420ba32c29217b54eebd26ff7f9234d31c3fbb2/hamcrest-2.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.ccil.cowan.tagsoup/tagsoup/1.2.1/5584627487e984c03456266d3f8802eb85a9ce97/tagsoup-1.2.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-test-filter/2.29.1/80ee4d0e8a458be89feff62cc527c88301bdf6d5/allure-test-filter-2.29.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-java-commons/2.29.1/e890caace3c0eb81bff0b4bb87f3e91071df305/allure-java-commons-2.29.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf/3.1.2.RELEASE/273997509a4c7aef86cee0521750140c587d9be2/thymeleaf-3.1.2.RELEASE.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.linecorp.armeria/armeria/1.25.2/f0fc50faf4caaa6954ed1735744e30e66a679a4e/armeria-1.25.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.4.11/54450c0c783e896a1a6d88c043bd2f1daba1c382/logback-classic-1.4.11.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/2.0.9/89eb336cf1183ce075253c7c3788aa196d56f71a/jcl-over-slf4j-2.0.9.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.jayway.jsonpath/json-path/2.8.0/b4ab3b7a9e425655a0ca65487bbbd6d7ddb75160/json-path-2.8.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.13/80229737f704b121a318bba5d5deacbcf395bc77/slf4j-api-2.0.13.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.graalvm.js/js-scriptengine/22.3.3/d9e4042e668711dc4a2a86c4f21c224415db1513/js-scriptengine-22.3.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.graalvm.js/js/22.3.3/76672407deed1efa2dd0a650d3bc323853ab80fc/js-22.3.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.16.0/4e3eb3d79888d76b54e28b350915b5dc3919c9de/commons-codec-1.16.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.11.1/69214c1de1960040729702eb58deac8827135e7/antlr4-runtime-4.11.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.4.10/91cb329e9424bf32131eeb1ce2d17bf31b9899bc/json-smart-2.4.10.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/2.0/3aab2116756442bf0d4cd1c089b24d34c3baa253/snakeyaml-2.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/de.siegmar/fastcsv/2.2.1/eb4810305e70a7b2452ff469c630299acc2b1880/fastcsv-2.2.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/info.picocli/picocli/4.7.1/7ac5efc1f895a237eb3d8e77375d7c7a7dbbaae7/picocli-4.7.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.github.classgraph/classgraph/4.8.160/b00da065b05c9534f0d032cefe2b69d0289200da/classgraph-4.8.160.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.github.t12y/resemble/1.0.2/bfadd75da67d9bcce573d9b9c7691311e68d38b5/resemble-1.0.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.github.t12y/ssim/1.0.0/1970b4aca4b90e0b0c5495c239e3c841f600eb8f/ssim-1.0.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.36.0/227d4d4957ccc3dc5761bd897e3a0ee587e750a7/error_prone_annotations-2.36.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.11/68e9a6adf7cf8eb7e9d31bbc554c7c75eeaac568/commons-lang3-3.11.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.qameta.allure/allure-model/2.29.1/10c52451031c77eb6eaf8562a45ad3ea1b556a70/allure-model-2.29.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar:/usr/local/gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.graalvm.regex/regex/22.3.3/c04141b30c8f2ddb1c6bbdaa922960e9473dcae9/regex-22.3.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.graalvm.truffle/truffle-api/22.3.3/711f4d7f08ef92f62412497a53ef7844ff522a41/truffle-api-22.3.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.graalvm.sdk/graal-sdk/22.3.3/d792f4a51901bbaf60362963ecf5d78d83c61ffe/graal-sdk-22.3.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/71.1/9e7d3304c23f9ba5cb71915f7cce23231a57a445/icu4j-71.1.jar:/usr/local/gradle/caches/modules-2/files-2.1/ognl/ognl/3.3.4/1904789bdd96f226ad252a02f230be1015f4462b/ognl-3.3.4.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.attoparser/attoparser/2.0.7.RELEASE/e5d0e988d9124139d645bb5872b24dfa23e283cc/attoparser-2.0.7.RELEASE.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.1.6.RELEASE/7b90360afb2b860e09e8347112800d12c12b2a13/unbescape-1.1.6.RELEASE.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.15.2/30d16ec2aef6d8094c5e2dce1d95034ca8b6cb42/jackson-datatype-jsr310-2.15.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.15.2/4724a65ac8e8d156a24898d50fd5dbd3642870b8/jackson-annotations-2.15.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.15.2/66a50e089cfd2f93896b9b6f7a734cea7bcf2f31/jackson-datatype-jdk8-2.15.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.15.2/9353b021f10c307c00328f52090de2bdb4b6ff9c/jackson-databind-2.15.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.15.2/a6fe1836469a69b3ff66037c324d75fc66ef137c/jackson-core-2.15.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.11.3/285c9f339057d6f6363ab0c4e8d2c5d198fc9f49/micrometer-core-1.11.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-codec-haproxy/4.1.96.Final/b1e6c0ef649ad700e2c55c5c82ed3cf54e94288a/netty-codec-haproxy-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http2/4.1.96.Final/cc8baf4ff67c1bcc0cde60bc5c2bb9447d92d9e6/netty-codec-http2-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-native-macos/4.1.96.Final/a44188cd424c9c920a27d55b7571cd06608d09f8/netty-resolver-dns-native-macos-4.1.96.Final-osx-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-native-macos/4.1.96.Final/a4538d887fa1b61b50eb411e10465df36ac22998/netty-resolver-dns-native-macos-4.1.96.Final-osx-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns-classes-macos/4.1.96.Final/99d66697cc3d32314e84eea46ffea2038621af88/netty-resolver-dns-classes-macos-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-resolver-dns/4.1.96.Final/95023cc667af76578c9be326a6d54e3e1de52c/netty-resolver-dns-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-handler-proxy/4.1.96.Final/dcabd63f4aaec2b4cad7588bfdd4cd2c82287e38/netty-handler-proxy-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.96.Final/3f8904e072cfc9a8d67c6fe567c39bcbce5c9c55/netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-epoll/4.1.96.Final/cae778ab150745432a90d4f26f6174fe564f56fc/netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.96.Final/c127ed313fc80cf2cb366dccfded1daddc89a8ef/netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-kqueue/4.1.96.Final/70b3e957eec0cd78637c3bd15a8a4b24e653f87/netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.96.Final/a4d0d95df5026965c454902ef3d6d84b81f89626/netty-codec-http-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.96.Final/7840d7523d709e02961b647546f9d9dde1699306/netty-handler-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-epoll/4.1.96.Final/b0369501645f6e71f89ff7f77b5c5f52510a2e31/netty-transport-classes-epoll-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-classes-kqueue/4.1.96.Final/782f6bbb8dd5401599d272ea0fb81d1356bdffb2/netty-transport-classes-kqueue-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.96.Final/735d1f6d26eaffde106342264974f69f7e717f03/netty-transport-native-unix-common-4.1.96.Final-linux-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.96.Final/c201712752db38264d381a3235c3d4296b277c7/netty-transport-native-unix-common-4.1.96.Final-linux-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.96.Final/85788d413e0bb25572f3c0952d952bf72993678f/netty-transport-native-unix-common-4.1.96.Final-osx-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.96.Final/68d70c08e621822bbded547ef307779d25350e78/netty-transport-native-unix-common-4.1.96.Final-osx-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.96.Final/daf8578cade63a01525ee9d70371fa78e6e91094/netty-transport-native-unix-common-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-codec-dns/4.1.96.Final/afd90dc0e164be74b4a3e1a899890557fce98567/netty-codec-dns-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-codec-socks/4.1.96.Final/f53c52dbddaa4a02a51430405792d3f30a89b147/netty-codec-socks-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.96.Final/9cfe430f8b14e7ba86969d8e1126aa0aae4d18f0/netty-codec-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.96.Final/dbd15ca244be28e1a98ed29b9d755edbfa737e02/netty-transport-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-boringssl-static/2.0.61.Final/a52fce30407ffcbb38fb0edda64d81c56c331fe7/netty-tcnative-boringssl-static-2.0.61.Final-linux-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-boringssl-static/2.0.61.Final/cc2ba8b1c1f5acebfa314601aefefc1407056cdf/netty-tcnative-boringssl-static-2.0.61.Final-linux-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-boringssl-static/2.0.61.Final/efef10166c644b9ea9f4e62bfed12a5bb37b55a/netty-tcnative-boringssl-static-2.0.61.Final-osx-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-boringssl-static/2.0.61.Final/556e60a7ecd7f32e6cdc61cfba6c93d2b144889d/netty-tcnative-boringssl-static-2.0.61.Final-osx-aarch_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-boringssl-static/2.0.61.Final/a60887fcc4b03be4b4c065e085ec099a59c1dc25/netty-tcnative-boringssl-static-2.0.61.Final-windows-x86_64.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.aayushatharva.brotli4j/brotli4j/1.12.0/57f12ef40574f58e9a14fbcc5e05c91bbafea286/brotli4j-1.12.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.4.11/2f9f280219a9922a74200eaf7138c4c17fb87c0f/logback-core-1.4.11.jar:/usr/local/gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/2.4.9/32e540749224c22c9b17de8137e916aae9057e22/accessors-smart-2.4.9.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.29.0-GA/d3959fa7e00bf04dbe519228a23213d2afb625d8/javassist-3.29.0-GA.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.11.3/aaea9efe8f00c184b12f729a2f37e18ca4f33b8d/micrometer-observation-1.11.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.11.3/3422d6b1e5ce99cc3ad9ae83dbc83409e2f07603/micrometer-commons-1.11.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.12/6eb7552156e0d517ae80cc2247be1427c8d90452/HdrHistogram-2.1.12.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.latencyutils/LatencyUtils/2.0.3/769c0b82cb2421c8256300e907298a9410a2a3d3/LatencyUtils-2.0.3.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.96.Final/4b80fffbe77485b457bf844289bf1801f61b9e91/netty-buffer-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.96.Final/e51db5568a881e0f9b013b35617c597dc32f130/netty-resolver-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.96.Final/d10c167623cbc471753f950846df241d1021655c/netty-common-4.1.96.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/io.netty/netty-tcnative-classes/2.0.61.Final/4c6ae851ed97921bc6c6b64e019c2b039f49131a/netty-tcnative-classes-2.0.61.Final.jar:/usr/local/gradle/caches/modules-2/files-2.1/com.aayushatharva.brotli4j/service/1.12.0/8713fd8c6dcb64b19540ce55d58f06e7b6d84977/service-1.12.0.jar:/usr/local/gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.3/8e6300ef51c1d801a7ed62d07cd221aca3a90640/asm-9.3.jar
+java.vm.vendor=Oracle Corporation
+sun.arch.data.model=64
+user.variant=
+java.vendor.url=https://java.oracle.com/
+user.timezone=Asia/Tbilisi
+java.vm.specification.version=21
+os.name=Mac OS X
+user.country=GE
+sun.java.launcher=SUN_STANDARD
+sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib
+sun.java.command=worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 2'
+jdk.debug=release
+allure.results.directory=/Users/faridazimov/Desktop/PortnovSchool/karateProject/build/allure-results
+sun.cpu.endian=little
+user.home=/Users/faridazimov
+user.language=en
+java.specification.vendor=Oracle Corporation
+org.gradle.native=false
+java.version.date=2024-04-16
+java.home=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home
+file.separator=/
+java.vm.compressedOopsMode=Zero based
+line.separator=
+
+java.vm.specification.vendor=Oracle Corporation
+java.specification.name=Java Platform API Specification
+apple.awt.application.name=GradleWorkerMain
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+java.runtime.version=21.0.3+7-LTS-152
+user.name=faridazimov
+stdout.encoding=UTF-8
+path.separator=:
+os.version=15.3.2
+java.runtime.name=Java(TM) SE Runtime Environment
+file.encoding=UTF-8
+java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+java.vendor.url.bug=https://bugreport.java.com/bugreport/
+java.io.tmpdir=/var/folders/0_/m0lc4cj93vddkw7w47rz2q540000gn/T/
+java.version=21.0.3
+user.dir=/Users/faridazimov/Desktop/PortnovSchool/karateProject
+os.arch=aarch64
+java.vm.specification.name=Java Virtual Machine Specification
+org.gradle.internal.worker.tmpdir=/Users/faridazimov/Desktop/PortnovSchool/karateProject/build/tmp/test/work
+native.encoding=UTF-8
+java.library.path=/Users/faridazimov/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+junit.jupiter.extensions.autodetection.enabled=true
+java.vm.info=mixed mode, sharing
+stderr.encoding=UTF-8
+java.vendor=Oracle Corporation
+java.vm.version=21.0.3+7-LTS-152
+sun.io.unicode.encoding=UnicodeBig
+java.class.version=65.0
+---- Command Line ---
+Empty
+---- Full Classpath ---
+Empty
+---- Compiler Messages ---
+Empty
