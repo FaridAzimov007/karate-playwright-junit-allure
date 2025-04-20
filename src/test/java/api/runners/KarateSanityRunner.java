@@ -2,14 +2,13 @@ package api.runners;
 
 import com.intuit.karate.Runner;
 
+public class KarateSanityRunner {
 
-public class KarateTestRunner {
     public static void main(String[] args) {
         Runner.builder()
                 .path("classpath:feature")
-                .tags("@Smoke")
+                .tags("@Sanity")
                 .hook(new CustomAllureKarate())
                 .parallel(1);
     }
-
 }

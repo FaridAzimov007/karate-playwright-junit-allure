@@ -13,7 +13,7 @@ import web.config.TestBase;
 @DisplayName("Product Page Tests")
 public class ProductPageTest extends TestBase {
 
-    @Tag("Sanity")
+    @Tag("RegressionUI")
     @Owner("Farid Azimov - SDET")
     @Feature(value = "Products")
     @Description("Verification that the product added to the cart")

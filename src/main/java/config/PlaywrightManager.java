@@ -7,15 +7,12 @@ import org.slf4j.LoggerFactory;
 
 public class PlaywrightManager {
     private static final Logger LOGGER = LoggerFactory.getLogger(PlaywrightManager.class);
-
-    // ThreadLocal обеспечит каждому потоку индивидуальный экземпляр Playwright, Browser, Context и Page
     private static final ThreadLocal<Playwright> playwrightThreadLocal = new ThreadLocal<>();
     private static final ThreadLocal<Browser> browserThreadLocal = new ThreadLocal<>();
     private static final ThreadLocal<BrowserContext> contextThreadLocal = new ThreadLocal<>();
     private static final ThreadLocal<Page> pageThreadLocal = new ThreadLocal<>();
 
     private PlaywrightManager() {
-        // Приватный конструктор для предотвращения создания экземпляра
     }
 
     public static void init(boolean headless, String proxy) {

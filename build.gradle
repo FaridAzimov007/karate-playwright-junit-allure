@@ -50,28 +50,7 @@ tasks.register("uiSmoke", Test) {
         includeTags "SmokeUI"
     }
 
-    include '**/web/**/*.class' // запускаем только UI тесты
-
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
-
-    outputs.upToDateWhen { false } // не кэшировать
-    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
-}
-
-
-tasks.register("karateSmoke", Test) {
-    group = "verification"
-    description = "Run Smoke Karate tests only"
-
-    useJUnitPlatform()
-
-//    include '**/api/runners/KarateTestRunner*.class'
-    filter {
-        includeTestsMatching "api.runners.KarateTestRunner"
-    }
-    systemProperty "karate.options", "--tags @Smoke"
+    include '**/web/**/*.class'
 
     testLogging {
         events "passed", "skipped", "failed"
@@ -81,26 +60,103 @@ tasks.register("karateSmoke", Test) {
     systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
 }
 
+tasks.register("karateSmoke", JavaExec) {
+    group = "verification"
+    description = "Run Karate smoke tests with Allure hook"
+
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'api.runners.KarateTestRunner'
+
+    systemProperty "karate.env", System.getProperty("karate.env", "dev")
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+
+    doFirst {
+        delete fileTree(dir: layout.buildDirectory.get().asFile, include: ["allure-results/**/*"])
+    }
+}
+
+tasks.register("uiRegression", Test) {
+    group = "verification"
+    description = "Run Regression UI tests only"
+
+    useJUnitPlatform {
+        includeTags "RegressionUI"
+    }
+
+    include '**/web/**/*.class'
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    outputs.upToDateWhen { false }
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+}
+
+tasks.register("karateRegression", JavaExec) {
+    group = "verification"
+    description = "Run Karate regression tests with Allure hook"
+
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'api.runners.KarateRegressionRunner'
+
+    systemProperty "karate.env", System.getProperty("karate.env", "dev")
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+
+    doFirst {
+        delete fileTree(dir: layout.buildDirectory.get().asFile, include: ["allure-results/**/*"])
+    }
+}
+
+tasks.register("uiSanity", Test) {
+    group = "verification"
+    description = "Run Sanity UI tests only"
+
+    useJUnitPlatform {
+        includeTags "SanityUI"
+    }
+
+    include '**/web/**/*.class'
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    outputs.upToDateWhen { false }
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+}
+
+tasks.register("karateSanity", JavaExec) {
+    group = "verification"
+    description = "Run Karate sanity tests with Allure hook"
+
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'api.runners.KarateSanityRunner'
+
+    systemProperty "karate.env", System.getProperty("karate.env", "dev")
+    systemProperty "allure.results.directory", layout.buildDirectory.dir("allure-results").get().asFile.absolutePath
+
+    doFirst {
+        delete fileTree(dir: layout.buildDirectory.get().asFile, include: ["allure-results/**/*"])
+    }
+}
+
 tasks.register("smoke") {
     group = "verification"
     description = "Run all Smoke tests (Karate + UI)"
     dependsOn("uiSmoke", "karateSmoke")
 }
 
-tasks.register("regress", Test) {
+tasks.register("regression") {
     group = "verification"
     description = "Run all Regress tests (Karate + UI)"
-    useJUnitPlatform()
-    systemProperty "karate.options", "Regress"
-    systemProperty "junit.jupiter.tags", "RegressUI"
+    dependsOn("uiRegression", "karateRegression")
 }
 
-tasks.register("sanity", Test) {
+tasks.register("Sanity") {
     group = "verification"
     description = "Run all Sanity tests (Karate + UI)"
-    useJUnitPlatform()
-    systemProperty "karate.options", "Sanity"
-    systemProperty "junit.jupiter.tags", "SanityUI"
+    dependsOn("uiSanity", "karateSanity")
 }
 
 sourceSets {

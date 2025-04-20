@@ -17,7 +17,7 @@ Feature: User info tests
   @allure.label.story:https://jira.ce.abc.io/browse/rt-5736
   @allure.severity:hight
   @allure.label.tag:some_tag
-  @Smoke
+  @Regression
   Scenario: Fetch list of users (Smoke)
     #Sending get request to get List of users
     Given url baseUrl + '/users?page=2'
