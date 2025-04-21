@@ -1,6 +1,7 @@
 package api.runners;
 
 import com.intuit.karate.Runner;
+import config.CustomAllureKarate;
 
 public class KarateRegressionRunner {
 

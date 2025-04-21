@@ -56,7 +56,7 @@ The following tags are used to organize and execute tests effectively:
 - **@Smoke** – Used for API smoke tests.
 - **@SmokeUI** – Used for UI smoke tests.
 - **@Sanity** – Used for quick sanity checks.
-- **@Regress** – Used for the regression test suite.
+- **@Regression** – Used for the regression test suite.
 - Example of manual run: ./gradlew -Dkarate.options="--tags @Smoke" karateSmoke
 
 ## 📊 Allure Report

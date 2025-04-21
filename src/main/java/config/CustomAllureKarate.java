@@ -1,4 +1,4 @@
-package api.runners;
+package config;
 
 import com.intuit.karate.core.FeatureRuntime;
 import com.intuit.karate.core.ScenarioRuntime;
